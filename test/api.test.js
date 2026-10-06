@@ -1,7 +1,7 @@
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { createApp } from '../server.js';
-import { openDb } from '../db.js';
+import { openDb } from '../lib/sqlite-store.js';
 import { encryptSecret, decryptSecret } from '../public/crypto.js';
 
 let server, base, clock = 1_000_000;
