@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>WhisperLink · Secreto</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/view.js"></script>
+</head>
+<body>
+  <main>
+    <h1><a href="/">WhisperLink</a></h1>
+
+    <section id="loading"><p>Comprobando…</p></section>
+
+    <section id="confirm" hidden>
+      <p class="lead">Alguien te ha enviado un secreto. <strong>Solo puede verse una vez</strong>:
+        al revelarlo se borrará del servidor.</p>
+      <form id="reveal-form">
+        <div id="password-field" hidden>
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" autocomplete="off">
+        </div>
+        <button type="submit" id="reveal-btn">Revelar secreto</button>
+        <p class="error" id="reveal-error" hidden></p>
+      </form>
+    </section>
+
+    <section id="secret-view" hidden>
+      <label for="secret">Secreto</label>
+      <textarea id="secret" rows="7" readonly spellcheck="false"></textarea>
+      <button type="button" id="copy-secret">Copiar</button>
+      <p class="hint">Este secreto ya se ha borrado del servidor. Si cierras la página no podrás volver a verlo.</p>
+    </section>
+
+    <section id="gone" hidden>
+      <p class="lead" id="gone-msg">Este secreto no existe, ya se ha leído o ha caducado.</p>
+      <a class="button" href="/">Crear un secreto</a>
+    </section>
+  </main>
+</body>
+</html>

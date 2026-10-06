@@ -1,0 +1,12 @@
+{
+  "name": "whisperlink",
+  "version": "0.1.0",
+  "description": "Secretos de un solo uso cifrados en el navegador",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

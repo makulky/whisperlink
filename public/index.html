@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>WhisperLink</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/create.js"></script>
+</head>
+<body>
+  <main>
+    <h1>WhisperLink</h1>
+    <p class="lead">Comparte un secreto con un enlace que solo se puede abrir una vez.
+      Se cifra en tu navegador; el servidor nunca ve el contenido ni la clave.</p>
+
+    <form id="create-form">
+      <label for="secret">Secreto</label>
+      <textarea id="secret" rows="7" maxlength="60000" required autocomplete="off" spellcheck="false"
+        placeholder="Contraseñas, tokens, notas privadas…"></textarea>
+
+      <div class="row">
+        <div>
+          <label for="ttl">Caduca en</label>
+          <select id="ttl">
+            <option value="1h">1 hora</option>
+            <option value="1d" selected>1 día</option>
+            <option value="7d">7 días</option>
+          </select>
+        </div>
+        <div class="grow">
+          <label for="password">Contraseña (opcional)</label>
+          <input id="password" type="password" autocomplete="new-password">
+        </div>
+      </div>
+
+      <button type="submit" id="create-btn">Crear enlace</button>
+      <p class="error" id="create-error" hidden></p>
+    </form>
+
+    <section id="result" hidden>
+      <label for="link">Enlace de un solo uso</label>
+      <div class="copy-row">
+        <input id="link" readonly>
+        <button type="button" id="copy-link">Copiar</button>
+      </div>
+      <p class="hint">Se destruirá al abrirse o cuando caduque.</p>
+      <p class="hint warn" id="password-hint" hidden>Comparte la contraseña por otro canal distinto al del enlace.</p>
+      <button type="button" class="secondary" id="new-secret">Crear otro</button>
+    </section>
+  </main>
+</body>
+</html>
